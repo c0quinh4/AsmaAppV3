@@ -1,39 +1,61 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
-# dependencies
+# ------------ General Node/JS ------------
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+coverage/
+.tmp/
+temp/
+tmp/
+.cache/
+.eslintcache
 
-# Expo
+# Lock files — keep EXACTLY ONE committed for reproducible installs.
+# If você usa npm, mantenha package-lock.json e REMOVA os outros.
+# Se usa yarn/pnpm, mantenha o lock correspondente e remova os demais.
+# (Por padrão, não ignoramos nenhum aqui.)
+# yarn.lock
+# pnpm-lock.yaml
+
+# ------------ Expo / React Native ------------
 .expo/
+.expo-shared/
 dist/
 web-build/
-expo-env.d.ts
 
-# Native
-.kotlin/
-*.orig.*
+# ------------ Android / Gradle (outputs locais) ------------
+.gradle/
+android/.gradle/
+android/build/
+android/**/build/
+android/captures/
+*.iml
+local.properties     
+# contém o caminho do SDK local — NÃO versione
+
+# ------------ Keystores / Assinaturas / Certificados (NÃO versione) ------------
+*.keystore
 *.jks
-*.p8
+keystore.properties
+*.keystore.properties
 *.p12
-*.key
-*.mobileprovision
-
-# Metro
-.metro-health-check*
-
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
-
-# macOS
-.DS_Store
+*.p8
 *.pem
+*.cer
+*.csr
 
-# local env files
-.env*.local
+# ------------ Ambientes / Segredos ------------
+.env
+.env.*
+!.env.example        
+# mantenha um modelo sem segredos
 
-# typescript
-*.tsbuildinfo
+# ------------ SO / Editor ------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
 
-app-example
+expo-env.d.ts
